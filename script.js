@@ -77,8 +77,8 @@ function loadQuestion(){
 
   const q = questions[currentIndex];
   let html = `<h3>${q.question}</h3>`;
-  if(q.img){
-    html += `<img src="${q.img}" width="200"><br>`;
+  if(q.emoji){
+    html += `<img src="${q.emoji}" width="200"><br>`;
   }
   questionEl.innerHTML = html;
 
@@ -87,7 +87,7 @@ function loadQuestion(){
     const btn = document.createElement("button");
     btn.textContent = opt;
     btn.className = "option";
-    btn.onclick = () => checkAnswer(opt, q.answer);
+    btn.onclick = () => checkAnswer(opt, q.correct);
     optionsEl.appendChild(btn);
   });
 }
