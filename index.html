@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Quiz & Drawing Game</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header>
+    <h1>🎮 Quiz & Drawing Game</h1>
+  </header>
+
+  <main>
+    <!-- Start Screen -->
+    <section id="start-screen">
+      <h2>Select a Game</h2>
+      <button class="btn" onclick="startQuiz('animals')">🐾 Animals Quiz</button>
+      <button class="btn" onclick="startQuiz('math')">➕ Math Quiz</button>
+      <button class="btn" onclick="startQuiz('science')">🔬 Science Quiz</button>
+      <button class="btn" onclick="startQuiz('drawing')">🎨 Drawing Game</button>
+    </section>
+
+    <!-- Quiz Area -->
+    <section id="quiz-area" hidden>
+      <div id="question"></div>
+      <div id="options"></div>
+      <button class="btn" id="nextBtn" onclick="nextQuestion()">Next</button>
+    </section>
+
+    <!-- Drawing Game -->
+    <section id="drawing-game" hidden>
+      <h2 id="draw-task">Draw something!</h2>
+      <canvas id="drawCanvas" width="500" height="300"></canvas>
+      <br>
+      <button class="btn" onclick="clearCanvas()">Clear</button>
+      <button class="btn" id="doneDrawingBtn">Done</button>
+      <div id="drawing-result" hidden></div>
+    </section>
+
+    <!-- Result -->
+    <section id="result" hidden>
+      <h2>Result</h2>
+      <p id="score"></p>
+      <button class="btn" onclick="resetQuiz()">Play Again</button>
+    </section>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
