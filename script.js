@@ -76,12 +76,21 @@ function loadQuestion(){
   }
 
   const q = questions[currentIndex];
-  let html = `<h3>${q.question}</h3>`;
-  if(q.emoji){
-    html += `{q.emoji} width="200"><br>`;
+  let html = "";
+
+  // If question is text (math/science)
+  if(q.question){
+    html += `<h3>${q.question}</h3>`;
   }
+
+  // If question is emoji (animals)
+  if(q.emoji){
+    html += `<h1 style="font-size: 5rem;">${q.emoji}</h1>`;
+  }
+
   questionEl.innerHTML = html;
 
+  // Render options
   optionsEl.innerHTML = "";
   shuffleArray(q.options).forEach(opt => {
     const btn = document.createElement("button");
@@ -91,6 +100,7 @@ function loadQuestion(){
     optionsEl.appendChild(btn);
   });
 }
+
 
 function checkAnswer(selected, correct){
   if(selected === correct) score++;
