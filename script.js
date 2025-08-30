@@ -78,7 +78,7 @@ function loadQuestion(){
   const q = questions[currentIndex];
   let html = `<h3>${q.question}</h3>`;
   if(q.emoji){
-    html += `${q.emoji} width="200"><br>`;
+    html += `{q.emoji} width="200"><br>`;
   }
   questionEl.innerHTML = html;
 
